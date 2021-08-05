@@ -1,0 +1,14 @@
+{
+    "name": "The PWinter",
+    "short_name": "PWinter",
+    "start_url": "index.html",
+    "display": "standalone",
+    "display_override": ["window-controls-overlay"],
+    "background-color": "#AFAFAF",
+    "theme-color": "#3B3B3B",
+    "icons": [{
+        "src": "images/pwinter.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }]
+}
