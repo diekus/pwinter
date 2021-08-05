@@ -2,11 +2,16 @@
     --shadow-color: rgba(0, 0, 0, .5);
     --shadow: 0px 0px 20px var(--shadow-color);
     --radius: 25px;
+
+    --colorP: #A0A0A0;
+    --colorW: #59D8C8;
+    --colorA: #A0A0A0;
 }
 
 html {
     background: rgb(175, 175, 175);
     background: linear-gradient(170deg, rgba(59, 59, 59, 1) 30%, rgba(175, 175, 175, 1) 30%);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     height: 100vh;
 }
@@ -25,6 +30,23 @@ body {
 header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
+}
+
+#titleBar {
+    color: #FFFFFF;
+    background-color: #3B3B3B;
+    position: fixed;
+    left: env(titlebar-area-x, 0);
+    top: env(titlebar-area-y, 0);
+    width: calc(env(titlebar-area-width, 100%) - 2em);
+    height: env(titlebar-area-height, 40px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 1em;
+    -webkit-app-region: drag;
+    app-region: drag;
 }
 
 #canvasPreview {
@@ -56,18 +78,12 @@ header {
 
 .icon {
     height: 1rem;
+    cursor: pointer;
 }
 
 .colorBtn {
     height: 3em;
-}
-
-#titleBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    padding: 0.2em;
+    cursor: pointer;
 }
 
 #titleBarIcons {
@@ -80,9 +96,9 @@ header {
 
 .logoFooter {
     height: 3rem;
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
 
 .colorSelectionRow {
@@ -105,6 +121,7 @@ input[type="color"] {
     height: 3.3em;
     width: 3.3em;
     background:#3B3B3B;
+    cursor: pointer;
 }
 
 @media (max-width: 900px) {
