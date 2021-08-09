@@ -60,6 +60,7 @@ header {
     align-content: flex-end;
     width: 100%;
     height: 100%;
+    gap: 1rem;
 }
 
 #colorSelectionPane {
@@ -73,12 +74,14 @@ header {
 }
 
 .pwaLogo {
-    padding: 6em;
+    padding: 15%;
 }
 
 .icon {
     height: 1rem;
     cursor: pointer;
+    -webkit-app-region: no-drag;
+    app-region: no-drag;
 }
 
 .colorBtn {
@@ -106,6 +109,7 @@ header {
     flex-direction: row;
     justify-content: space-around;
     margin: 1em;
+    gap: .5em;
 }
 
 .colorCircle {
@@ -124,22 +128,51 @@ input[type="color"] {
     cursor: pointer;
 }
 
-@media (max-width: 900px) {
-    body {
-        grid-template: 5rem auto / 1fr 8fr 1fr;
-    }
-
-    .pwaLogo {
-        padding: 5em;
-    }
-}
-
-@media (max-width: 550px) {
+@media (max-width: 400px) {
     body {
         grid-template: 5rem auto / 1fr 10fr 1fr;
     }
 
     .pwaLogo {
-        padding: 2.5em;
+        padding: 2em;
+    }
+
+    #colorSelectionPane {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        padding: 1rem;
+    }
+} 
+
+@media (orientation: landscape) {
+    body {
+        grid-template: 5rem auto / 1fr 20fr 1fr;
+    }
+    
+    #canvasPreview {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .pwaLogo {
+        padding: 3em;
+        width: 100%;
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        grid-template: 5rem auto / 1fr 20fr 1fr;
+    }
+    
+    #canvasPreview {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #colorSelectionPane {
+        margin: 1rem;
     }
 }
