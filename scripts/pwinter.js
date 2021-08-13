@@ -19,7 +19,8 @@ let init = () => {
 
     //
     document.getElementById('btnSave').addEventListener('click', saveLogo, false);
-    document.getElementById('btnShare').addEventListener('click', sharePWinter, false);
+    document.getElementById('btnShare').addEventListener('click', shareLogo, false);
+    document.getElementById('btnShareApp').addEventListener('click', sharePWinter, false);
 };
 
 let setBackgroundTheme = (theme) => {
