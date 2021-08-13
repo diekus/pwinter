@@ -3,9 +3,13 @@
     --shadow: 0px 0px 20px var(--shadow-color);
     --radius: 25px;
 
-    --colorP: #A0A0A0;
-    --colorW: #59D8C8;
-    --colorA: #A0A0A0;
+    --colorP: rgba(140, 0, 255, 1);
+    --colorW: rgba(0, 255, 221, 1);
+    --colorA: rgba(140, 0, 255, 1);
+
+    --colorLight: #FFF;
+    --colorDark: #111;
+    --border: rgb(128, 128, 128);
 
 }
 
@@ -35,7 +39,7 @@ header {
 
 #titleBar {
     color: #FFFFFF;
-    background-color: #3B3B3B;
+    background-color: #3A006A;
     position: fixed;
     left: env(titlebar-area-x, 0);
     top: env(titlebar-area-y, 0);
@@ -53,7 +57,6 @@ header {
 #canvasPreview {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: var(--surfaceBg);
     border-radius: var(--radius) var(--radius) 0px 0px;
     box-shadow: var(--shadow);
     display: flex;
@@ -62,6 +65,7 @@ header {
     width: 100%;
     height: 100%;
     gap: 1rem;
+    transition: background-color .2s ease-in;
 }
 
 #colorSelectionPane {
@@ -69,7 +73,7 @@ header {
     flex-direction: column;
     margin: 3rem;
     padding: 1rem;
-    border: #3B3B3B solid 7px;
+    border: var(--border) solid 7px;
     border-radius: var(--radius);
     box-shadow: inset var(--shadow);
 }
@@ -85,9 +89,14 @@ header {
     app-region: no-drag;
 }
 
-.colorBtn {
+.bgBtn {
     height: 3em;
     cursor: pointer;
+    transition: transform .2s ease-out;
+}
+
+.bgBtn:hover {
+    transform: translateY(-5px);
 }
 
 #titleBarIcons {
@@ -114,18 +123,18 @@ header {
 }
 
 .colorCircle {
-    border: #3B3B3B solid 6px;
+    border: var(--border) solid 6px;
     border-radius: 50%;
     height: 2.3em;
     width: 2.3em;
 }
 
 input[type="color"] {
-    border: #3B3B3B solid 1.2px;
+    border: var(--border) solid 1.2px;
     border-radius: 12%;
     height: 3.3em;
     width: 3.3em;
-    background:#3B3B3B;
+    background:var(--border);
     cursor: pointer;
 }
 

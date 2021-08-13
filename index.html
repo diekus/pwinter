@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#3B3B3B" />
+    <meta name="theme-color" content="#3A006A" />
     <link rel="manifest" href="manifest.json">
     <link href="styles/pwinter_light.css" type="text/css" rel="stylesheet" media="(prefers-color-scheme: light)">
     <link href="styles/pwinter_dark.css" type="text/css" rel="stylesheet" media="(prefers-color-scheme: dark)">
@@ -53,38 +53,35 @@
         </section>
         <section id="colorSelectionPane">
             <span class="colorSelectionRow">
-                <!--div class="colorCircle"></div>
-                <div class="colorCircle"></div>
-                <div class="colorCircle"></div-->
-                <input type="color" id="colorPickerP" name="colorP" value="#AFAFAF">
-                <input type="color" id="colorPickerW" name="colorW" value="#59D8C8">
-                <input type="color" id="colorPickerA" name="colorA" value="#AFAFAF">
+                <input type="color" id="colorPickerP" name="colorP" value="#8C00FF">
+                <input type="color" id="colorPickerW" name="colorW" value="#00FFDD">
+                <input type="color" id="colorPickerA" name="colorA" value="#8C00FF">
             </span>
             <span class="colorSelectionRow">
-                <svg class="colorBtn" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-miterlimit="1.5">
+                <svg class="bgBtn" id="btnLight" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-miterlimit="1.5">
                     <title>Set light background on the logo</title>
                     <circle cx="25" cy="25" r="25" fill="none"/>
                     <clipPath id="a">
                     <circle cx="25" cy="25" r="25"/>
                     </clipPath>
                     <g clip-path="url(#a)">
-                    <path d="M25 35v5" fill="none" stroke="#3b3b3b" stroke-width="2.5"/>
-                    <circle cx="25" cy="25" r="6.8" fill="#3b3b3b"/>
-                    <path d="M25 15v-4M15 25h-4M35 25h5M18 18l-3-3M32 32l3 3M32 18l3-3M18 32l-3 3" fill="none" stroke="#3b3b3b" stroke-width="2.5"/>
+                    <path d="M25 35v5" fill="none" stroke="var(--border)" stroke-width="2.5"/>
+                    <circle cx="25" cy="25" r="6.8" fill="var(--border)"/>
+                    <path d="M25 15v-4M15 25h-4M35 25h5M18 18l-3-3M32 32l3 3M32 18l3-3M18 32l-3 3" fill="none" stroke="var(--border)" stroke-width="2.5"/>
                     </g>
-                    <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="#3b3b3b"/>
+                    <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="var(--border)"/>
                 </svg>
-                <svg class="colorBtn" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+                <svg class="bgBtn" id="btnDark" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
                 <title>Set dark background on the logo</title>
                 <circle cx="25" cy="25" r="25" fill="none"/>
                 <clipPath id="a">
                     <circle cx="25" cy="25" r="25"/>
                 </clipPath>
-                <g fill="#3b3b3b" clip-path="url(#a)">
+                <g fill="var(--border)" clip-path="url(#a)">
                     <path d="M33 33a11 11 0 01-18-8 11 11 0 0118-8h-1a8 8 0 101 16z"/>
                     <path d="M34 19l1 1h1l-1 1 1 1h-3v-1l-1-1h2v-1zM28 23l1 1h1v1h-1l1 2h-1l-1-1-1 1v-2h-1v-1h2v-1zM34 27l1 1h1v1h-1l1 1-1 1-1-1-1 1v-2h-1v-1h2v-1z"/>
                 </g>
-                <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="#3b3b3b"/>
+                <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="var(--border)"/>
                 </svg>
             </span>
         </section>

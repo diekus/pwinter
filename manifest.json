@@ -4,8 +4,8 @@
     "start_url": "index.html",
     "display": "standalone",
     "display_override": ["window-controls-overlay"],
-    "background-color": "#AFAFAF",
-    "theme_color": "#3B3B3B",
+    "background_color": "#AFAFAF",
+    "theme_color": "#3A006A",
     "icons": [{
         "src": "images/pwinter-512.png",
         "sizes": "512x512",

@@ -1,6 +1,8 @@
 :root {
-    --gradient1: rgba(59, 59, 59, 1) 30%;
-    --gradient2: rgba(175, 175, 175, 1) 30%;
-    --surfaceBg: rgba(250, 250, 250, 1);
-    --border: ;
+    --gradient1: rgb(58, 0, 106) 30%;
+    --gradient2: rgb(206, 206, 206) 30%;
+}
+
+#canvasPreview {
+    background-color: var(--colorLight);
 }
