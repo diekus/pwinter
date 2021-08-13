@@ -87,6 +87,11 @@ header {
     cursor: pointer;
     -webkit-app-region: no-drag;
     app-region: no-drag;
+    transition: transform .2s ease-in;
+}
+
+.icon:hover {
+    transform: scale(1.1);
 }
 
 .bgBtn {
