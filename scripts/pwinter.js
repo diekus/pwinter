@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    init();  
+    
+
+    //gets the query string
+    let qs = new URLSearchParams(document.URL.substring(document.URL.indexOf('?')));
+    if(qs.has('randomize')) {
+        setRandomColors();
+    } else {
+        if(qs.has('colors')) {
+            let palette = extractColors(qs.get('colors'));
+            setLogoColors(palette[0], palette[1], palette[2]);
+        }
+    }
+
+    init();
 });
 
 let init = () => {
@@ -21,6 +34,36 @@ let init = () => {
     document.getElementById('btnSave').addEventListener('click', saveLogo, false);
     document.getElementById('btnShare').addEventListener('click', shareLogo, false);
     document.getElementById('btnShareApp').addEventListener('click', sharePWinter, false);
+};
+
+let setLogoColors = (colP, colW, colA) => {
+    document.getElementById('colorPickerP').value = colP;
+    document.querySelector(':root').style.setProperty("--colorP", colP);
+    document.getElementById('colorPickerW').value = colW;
+    document.querySelector(':root').style.setProperty("--colorW", colW);
+    document.getElementById('colorPickerA').value = colA;
+    document.querySelector(':root').style.setProperty("--colorA", colA);
+};
+
+let setRandomColors = () => {
+    let randColorP = getRandomColor();    
+    let randColorW = getRandomColor();    
+    let randColorA = getRandomColor();
+    setLogoColors(randColorP, randColorW, randColorA);
+};
+
+let getRandomColor = () => {
+    return  '#' + Math.floor(Math.random()*16777215).toString(16);
+};
+
+let extractColors = (urlPassed) => {
+    pcolors = urlPassed.replace('web+pwinter://', '');
+    pcolors = pcolors.replace('/', '');
+    pcolors = pcolors.split('-');
+    pcolors[0] = '#' + pcolors[0];
+    pcolors[1] = '#' + pcolors[1];
+    pcolors[2] = '#' + pcolors[2];
+    return pcolors;
 };
 
 let setBackgroundTheme = (theme) => {
