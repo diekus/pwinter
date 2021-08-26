@@ -30,5 +30,10 @@
         "protocol": "web+pwinter",
         "url": "index.html?colors=%s"
       }
+    ],
+    "url_handlers": [
+      {
+        "origin": "https://diek.us/"
+      }
     ]
 }
