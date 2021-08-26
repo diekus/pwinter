@@ -2,7 +2,6 @@
 async function saveLogo() {
     //prepares the logo
     if(window.showSaveFilePicker != undefined) {
-        alert(window.showSaveFilePicker);
         saveLogoDesktop();
     }
     else {
@@ -12,6 +11,10 @@ async function saveLogo() {
 
 let saveLogoMobile = () => {
     alert('mobile device weee');
+    let content = preparePWALogoforSVG();
+    const myBlob = new Blob([svgContent], {type: 'image/svg+xml'});
+    const downloadURL = URL.createObjectURL(myBlob);
+    document.getElementById('mobileLogoDownloadLink').setAttribute('href', downloadURL);
 };
 
 async function saveLogoDesktop() {
