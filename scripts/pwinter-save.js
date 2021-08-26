@@ -1,11 +1,7 @@
 //Saving logo 
 async function saveLogo () {
     //prepares the logo
-    let s = window.getComputedStyle(document.querySelector(':root'));
-    let content = document.getElementById('pwaLogo').innerHTML;
-    content = content.replace('var(--colorP)', s.getPropertyValue('--colorP'));
-    content = content.replace('var(--colorW)', s.getPropertyValue('--colorW'));
-    content = content.replace('var(--colorA)', s.getPropertyValue('--colorA'));
+    let content = preparePWALogoforSVG();
     
     //prepares the file
     let fileHandle;
@@ -29,6 +25,15 @@ async function saveLogo () {
         alert(msg);
         return;
     }
+}
+
+function preparePWALogoforSVG() {
+    let s = window.getComputedStyle(document.querySelector(':root'));
+    let content = document.getElementById('pwaLogo').innerHTML;
+    content = content.replace('var(--colorP)', s.getPropertyValue('--colorP'));
+    content = content.replace('var(--colorW)', s.getPropertyValue('--colorW'));
+    content = content.replace('var(--colorA)', s.getPropertyValue('--colorA'));
+    return content;
 }
 
 async function getNewFileHandle() {

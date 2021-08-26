@@ -1,6 +1,8 @@
 //Sharing (file) logo
 let shareLogo = () => {
+    let fileToShare = createFileForSharing(preparePWALogoforSVG());
     let filesArray = [];
+    filesArray[0] = fileToShare;
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {
         navigator.share({
             files: filesArray,
@@ -13,7 +15,13 @@ let shareLogo = () => {
         else {
             console.log(`System doesn't support sharing.`);
     }
-}
+};
+
+let createFileForSharing = (svgContent) => {
+    const myBlob = new Blob([svgContent], {type: 'image/svg+xml'});
+    const myFile = new File([myBlob], "custom pwa logo.svg", {type:myBlob.type});
+    return myFile;
+};
 
 //app share
 let sharePWinter = () => {
