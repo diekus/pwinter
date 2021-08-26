@@ -2,6 +2,7 @@
 async function saveLogo() {
     //prepares the logo
     if(window.showSaveFilePicker != undefined) {
+        alert(window.showSaveFilePicker);
         saveLogoDesktop();
     }
     else {
