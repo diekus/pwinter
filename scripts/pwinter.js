@@ -30,10 +30,14 @@ let init = () => {
         }, false);
     });
 
-    //
+    document.getElementById('btnNew').addEventListener('click', newLogo, false);
     document.getElementById('btnSave').addEventListener('click', saveLogo, false);
     document.getElementById('btnShare').addEventListener('click', shareLogo, false);
     document.getElementById('btnShareApp').addEventListener('click', sharePWinter, false);
+};
+
+let newLogo = () => {
+    setLogoColors( '#8C00FF' , '#00FFDD', '#8C00FF');
 };
 
 let setLogoColors = (colP, colW, colA) => {
