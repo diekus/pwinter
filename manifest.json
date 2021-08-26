@@ -33,7 +33,16 @@
     ],
     "url_handlers": [
       {
-        "origin": "https://diek.us/"
+        "origin": "https://diek.us"
+      },
+      {
+        "origin": "https://diekus.github.io"
+      },
+      {
+        "origin": "https://diekus.com"
+      },
+      {
+        "origin": "https://diekus.net"
       }
     ]
 }
