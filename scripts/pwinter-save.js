@@ -1,8 +1,20 @@
 //Saving logo 
-async function saveLogo () {
+async function saveLogo() {
     //prepares the logo
+    if(window.showSaveFilePicker != undefined) {
+        saveLogoDesktop();
+    }
+    else {
+        saveLogoMobile();
+    }
+}
+
+let saveLogoMobile = () => {
+    alert('mobile device weee');
+};
+
+async function saveLogoDesktop() {
     let content = preparePWALogoforSVG();
-    
     //prepares the file
     let fileHandle;
     try {
@@ -27,15 +39,7 @@ async function saveLogo () {
     }
 }
 
-function preparePWALogoforSVG() {
-    let s = window.getComputedStyle(document.querySelector(':root'));
-    let content = document.getElementById('pwaLogo').innerHTML;
-    content = content.replace('var(--colorP)', s.getPropertyValue('--colorP'));
-    content = content.replace('var(--colorW)', s.getPropertyValue('--colorW'));
-    content = content.replace('var(--colorA)', s.getPropertyValue('--colorA'));
-    return content;
-}
-
+//desktop file access support (Edge, Chrome, Opera)
 async function getNewFileHandle() {
     const options = {
         startIn: 'pictures',
@@ -58,3 +62,14 @@ async function writeFile (fileHandle, contents) {
     writable.write(contents);
     writable.close();
 }
+
+
+//utils 
+let preparePWALogoforSVG = () => {
+    let s = window.getComputedStyle(document.querySelector(':root'));
+    let content = document.getElementById('pwaLogo').innerHTML;
+    content = content.replace('var(--colorP)', s.getPropertyValue('--colorP'));
+    content = content.replace('var(--colorW)', s.getPropertyValue('--colorW'));
+    content = content.replace('var(--colorA)', s.getPropertyValue('--colorA'));
+    return content;
+};
