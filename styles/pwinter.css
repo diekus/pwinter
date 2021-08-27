@@ -150,6 +150,14 @@ input[type="color"] {
 
     .pwaLogo {
         padding: 2em;
+        width: 80%;
+    }
+
+    #pwaLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #colorSelectionPane {
