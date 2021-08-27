@@ -1,5 +1,5 @@
 //Sharing (file) logo
-let shareLogo = () => {
+async function shareLogo() {
     let fileToShare = createFileForSharing(preparePWALogoforSVG());
     let filesArray = [];
     filesArray[0] = fileToShare;
@@ -24,17 +24,14 @@ let createFileForSharing = (svgContent) => {
 };
 
 //app share
-let sharePWinter = () => {
+async function sharePWinter() {
     const shareData = {
         title: 'PWinter',
         text: 'Design your own PWA Logo.',
         url: 'https://diek.us/pwinter',
     };
-
     await navigator.share(shareData)
     .then(() => console.log('PWinter shared!'))
-    .catch((error) => console.error(error));
-
-    
+    .catch((error) => console.error(error));    
 };
 
