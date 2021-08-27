@@ -4,7 +4,7 @@ let shareLogo = () => {
     let filesArray = [];
     filesArray[0] = fileToShare;
     if (navigator.canShare && navigator.canShare({ files: filesArray })) {
-        navigator.share({
+        await navigator.share({
             files: filesArray,
             title: 'My PWA Logo',
             text: 'Custom PWA logo from The PWinter.'
@@ -31,8 +31,10 @@ let sharePWinter = () => {
         url: 'https://diek.us/pwinter',
     };
 
-    navigator.share(shareData)
+    await navigator.share(shareData)
     .then(() => console.log('PWinter shared!'))
-    .catch((error) => console.error(error))
+    .catch((error) => console.error(error));
+
+    
 };
 
