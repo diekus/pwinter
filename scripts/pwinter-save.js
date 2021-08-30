@@ -10,10 +10,13 @@ async function saveLogo() {
 }
 
 let saveLogoMobile = () => {
-    let content = preparePWALogoforSVG();
+    let svgContent = preparePWALogoforSVG();
     const myBlob = new Blob([svgContent], {type: 'image/svg+xml'});
     const downloadURL = URL.createObjectURL(myBlob);
-    window.location = downloadURL;
+    let mobDownload = document.createElement('a');
+    mobDownload.setAttribute('download', 'pwalogo.svg');
+    mobDownload.setAttribute('href', downloadURL);
+    mobDownload.click();
 };
 
 async function saveLogoDesktop() {
