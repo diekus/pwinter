@@ -1,7 +1,7 @@
 {
     "name": "The PWinter",
     "short_name": "PWinter",
-    "start_url": "index.html",
+    "start_url": "index.html?randomize=true",
     "display": "standalone",
     "display_override": ["window-controls-overlay"],
     "background_color": "#AFAFAF",
