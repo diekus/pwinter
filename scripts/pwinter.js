@@ -2,30 +2,34 @@ const reHexColor = /#[a-fA-F0-9]{6}/;
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    init();
+    setRandomColors();
 
     //gets the query string
     let qs = new URLSearchParams(document.URL.substring(document.URL.indexOf('?')));
-    if(qs.has('randomize')) {
-        setRandomColors();
-    } else {
-        if(qs.has('colors')) {
-            let palette = extractColors(qs.get('colors'));
-            setLogoColors(palette[0], palette[1], palette[2]);
+
+    if(qs.has('colors')) { //via protocol handler
+        let palette = extractColors(qs.get('colors'));
+        setLogoColors(palette[0], palette[1], palette[2]);
+    }
+    else {
+        if(qs.has('shared-color')) { //via web share target
+            let qs_aux = qs.toString().replace('%23', '#');
+            if(qs_aux.search(reHexColor) != -1) {
+                let col_aux = qs_aux.match(reHexColor)[0];
+                setLogoColors(col_aux, col_aux, col_aux)
+            }
+            else 
+                alert('No color was found!');
         }
         else {
-            if(qs.has('shared-color')) {
-                let qs_aux = qs.toString().replace('%23', '#');
-                if(qs_aux.search(reHexColor) != -1) {
-                    let col_aux = qs_aux.match(reHexColor)[0];
-                    setLogoColors(col_aux, col_aux, col_aux)
-                }
-                else 
-                    alert('No color was found!');
-            }
+            if(qs.has('blank')) { //via shortcuts
+                setLogoColors('#808080', '#808080', '#808080');
+            } 
         }
     }
 
-    init();
+    
 });
 
 let init = () => {
