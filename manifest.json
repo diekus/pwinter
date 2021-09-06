@@ -13,16 +13,16 @@
       }],
     "shortcuts": [
       {
-        "name": "Create new logo",
-        "url": "index.html",
+        "name": "Create blank logo",
+        "url": "index.html?blank=true",
         "description": "Creates a new PWA logo",
-        "icons": [{"src": "/images/short-new-logo.png", "sizes": "96x96"}]
+        "icons": [{"src": "./images/short-new-logo.png", "sizes": "96x96"}]
       },
       {
         "name": "Create random logo",
-        "url": "index.html?randomize=true",
+        "url": "index.html",
         "description": "Creates a new PWA logo with random colors",
-        "icons": [{"src": "/images/short-rand-logo.png", "sizes": "96x96"}]
+        "icons": [{"src": "./images/short-rand-logo.png", "sizes": "96x96"}]
       }
     ],
     "file_handlers": [
@@ -33,6 +33,16 @@
         }
       }
     ],
+    "share_target": {
+      "action": "index.html?shared-color",
+      "method": "GET",
+      "enctype": "application/x-www-form-urlencoded",
+      "params": {
+        "title": "title",
+        "text": "text",
+        "url": "url"
+      }
+    },
     "protocol_handlers": [
       {
         "protocol": "web+pwinter",
