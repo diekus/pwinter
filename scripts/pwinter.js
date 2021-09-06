@@ -1,3 +1,5 @@
+const reHexColor = /#[a-fA-F0-9]{6}/;
+
 document.addEventListener('DOMContentLoaded', function() {
     
 
@@ -9,6 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if(qs.has('colors')) {
             let palette = extractColors(qs.get('colors'));
             setLogoColors(palette[0], palette[1], palette[2]);
+        }
+        else {
+            if(qs.has('shared-color')) {
+                let qs_aux = qs.toString().replace('%23', '#');
+                if(qs_aux.search(reHexColor) != -1) {
+                    let col_aux = qs_aux.match(reHexColor)[0];
+                    setLogoColors(col_aux, col_aux, col_aux)
+                }
+                else 
+                    alert('No color was found!');
+            }
         }
     }
 
@@ -37,7 +50,7 @@ let init = () => {
 };
 
 let newLogo = () => {
-    setLogoColors( '#8C00FF' , '#00FFDD', '#8C00FF');
+    setLogoColors( '#808080' , '#808080', '#808080');
 };
 
 let setLogoColors = (colP, colW, colA) => {

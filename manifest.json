@@ -13,7 +13,7 @@
       }],
     "shortcuts": [
       {
-        "name": "Create new logo",
+        "name": "Create blank logo",
         "url": "index.html",
         "description": "Creates a new PWA logo",
         "icons": [{"src": "/images/short-new-logo.png", "sizes": "96x96"}]
@@ -25,6 +25,16 @@
         "icons": [{"src": "/images/short-rand-logo.png", "sizes": "96x96"}]
       }
     ],
+    "share_target": {
+      "action": "index.html?shared-color",
+      "method": "GET",
+      "enctype": "application/x-www-form-urlencoded",
+      "params": {
+        "title": "title",
+        "text": "text",
+        "url": "url"
+      }
+    },
     "protocol_handlers": [
       {
         "protocol": "web+pwinter",

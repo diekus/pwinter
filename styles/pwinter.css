@@ -3,9 +3,9 @@
     --shadow: 0px 0px 20px var(--shadow-color);
     --radius: 25px;
 
-    --colorP: rgba(140, 0, 255, 1);
-    --colorW: rgba(0, 255, 221, 1);
-    --colorA: rgba(140, 0, 255, 1);
+    --colorP: rgba(128, 128, 128, 1);
+    --colorW: rgba(128, 128, 128, 1);
+    --colorA: rgba(128, 128, 128, 1);
 
     --colorLight: #FFF;
     --colorDark: #111;
