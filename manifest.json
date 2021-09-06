@@ -28,7 +28,7 @@
     ],
     "file_handlers": [
       {
-        "action": "index.html/?load",
+        "action": "index.html/?open",
         "accept": {
           "text/csv": [".csv"]
         }
