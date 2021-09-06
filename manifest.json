@@ -25,6 +25,14 @@
         "icons": [{"src": "/images/short-rand-logo.png", "sizes": "96x96"}]
       }
     ],
+    "file_handlers": [
+      {
+        "action": "index.html/?load",
+        "accept": {
+          "text/csv": [".csv"]
+        }
+      }
+    ],
     "protocol_handlers": [
       {
         "protocol": "web+pwinter",
