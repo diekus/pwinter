@@ -31,7 +31,13 @@
         "action": "index.html?open",
         "accept": {
           "text/csv": [".csv"]
-        }
+        },
+        "icons": [
+          {
+            "src": "./images/csv-file.png",
+            "sizes": "144x144"
+          }
+        ]
       }
     ],
     "share_target": {

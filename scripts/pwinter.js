@@ -1,6 +1,6 @@
 const reHexColor = /#[a-fA-F0-9]{6}/;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
 
     init();
     setRandomColors(); 
@@ -26,17 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'blank': //entry via shortcut
                 setLogoColors('#808080', '#808080', '#808080');
                 break;
-            case 'open': //entry via file handling
-                if ('launchQueue' in window) {
-                    launchQueue.setConsumer((launchParams) => {
-                        if(!launchParams.files.length) { return; }
-                        for (const fileHandle of launchParams.files) {
-                            alert(fileHandle.toString());
-                        }
-                    });
-                }
-                break;
         }
+
+        await handleFile(); //entry via file handler
+
+        
     }    
 });
 
@@ -60,6 +54,25 @@ let init = () => {
     document.getElementById('btnShare').addEventListener('click', shareLogo, false);
     document.getElementById('btnShareApp').addEventListener('click', sharePWinter, false);
 };
+
+async function handleFile() {
+    if ('launchQueue' in window) {
+        launchQueue.setConsumer(async (launchParams) => {
+            if(!launchParams.files.length) { return; }
+
+            const fileHandle = launchParams.files[0];
+            const file = await fileHandle.getFile();
+            const reader = new FileReader();
+            reader.addEventListener('load', (event) => {
+                const colorsFromFile = event.target.result.split(';');
+                setLogoColors(colorsFromFile[0], colorsFromFile[1], colorsFromFile[2]);
+                alert(`Loading colors from ${file.name}`);
+              });
+            reader.readAsText(file);
+            
+        });
+    }
+}
 
 let newLogo = () => {
     setLogoColors( '#808080' , '#808080', '#808080');
