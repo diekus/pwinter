@@ -2,6 +2,7 @@
     "name": "The PWinter",
     "short_name": "PWinter",
     "start_url": "index.html?randomize=true",
+    "description": "The PWinter allows the creation of custom colored PWA logos.",
     "display": "standalone",
     "display_override": ["window-controls-overlay"],
     "background_color": "#AFAFAF",

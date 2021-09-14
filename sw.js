@@ -2,7 +2,15 @@
 var CACHE_NAME = 'pwinter-v1';
 var urlsToCache = [
     'styles/pwinter.css',
-    'index.html'
+    'styles/pwinter_dark.css',
+    'styles/pwinter_light.css',
+    'scripts/pwinter-save.js',
+    'scripts/pwinter-share.js',
+    'scripts/pwinter.js',
+    'index.html',
+    'images/csv-file.png',
+    'images/short-new-logo.png',
+    'images/short-rand-logo.png'
 ];
 
 self.addEventListener('install', function(event) {
