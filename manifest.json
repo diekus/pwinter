@@ -97,9 +97,9 @@
         "platform": "wide"
       },
       {
-        "src": "./images/screenshot4.jpg",
+        "src": "./images/screenshot4.png",
         "sizes": "524x1280",
-        "type": "image/jpg",
+        "type": "image/png",
         "label": "PWA Logo Printer mobile.",
         "platform": "narrow"
       }
