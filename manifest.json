@@ -72,5 +72,35 @@
       {
         "origin": "https://d13kus.github.io"
       }
+    ],
+    "screenshots" : [
+      {
+        "src": "./images/screenshot1.png",
+        "sizes": "1042x718",
+        "type": "image/png",
+        "label": "PWA Logo Printer in light mode.",
+        "platform": "wide"
+      },
+      {
+        "src": "./images/screenshot2.png",
+        "sizes": "1042x718",
+        "type": "image/png",
+        "label": "PWA Logo Printer in dark mode.",
+        "platform": "wide"
+      },
+      {
+        "src": "./images/screenshot3.png",
+        "sizes": "1042x718",
+        "type": "image/png",
+        "label": "PWA Logo Printer sharing.",
+        "platform": "wide"
+      },
+      {
+        "src": "./images/screenshot4.jpg",
+        "sizes": "524x1280",
+        "type": "image/jpg",
+        "label": "PWA Logo Printer mobile.",
+        "platform": "narrow"
+      }
     ]
 }
