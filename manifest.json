@@ -1,6 +1,6 @@
 {
     "name": "The PWinter",
-    "short_name": "PWinter",
+    "short_name": "The PWinter",
     "start_url": "index.html?randomize=true",
     "description": "The PWinter allows the creation of custom colored PWA logos.",
     "display": "standalone",
