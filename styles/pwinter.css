@@ -200,9 +200,9 @@ input[type="color"] {
     }
 }
 
-@media ((orientation: portrait) and (device-posture: folded)) {
+@media (device-posture: folded) {
     #canvasPreview {
-
+        background: red;
         display: grid;
         grid-template: 1fr 1fr / 1fr;
 
