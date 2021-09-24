@@ -201,10 +201,7 @@ input[type="color"] {
 }
 
 @media (device-posture: folded) {
-    #canvasPreview {
+    html {
         background: red;
-        display: grid;
-        grid-template: 1fr 1fr / 1fr;
-
     }
 }
