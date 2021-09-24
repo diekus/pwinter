@@ -199,3 +199,12 @@ input[type="color"] {
         margin: 1rem;
     }
 }
+
+@media ((orientation: portrait) and (device-posture: folded)) {
+    #canvasPreview {
+
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+
+    }
+}
