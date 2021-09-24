@@ -205,4 +205,14 @@ input[type="color"] {
         display: grid;
         grid-template: 1fr 1fr / 1fr;
     }
+
+    #pwaLogo {
+        padding-bottom: 4.5rem;
+    }
+
+    #colorSelectionPane {
+        height: fit-content;
+        margin-top: -2rem;
+    }
+
 }
