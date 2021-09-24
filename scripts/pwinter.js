@@ -47,6 +47,10 @@ let init = () => {
         themeBgBtn.addEventListener('click', function() {
             setBackgroundTheme(this.id);
         }, false);
+
+    //enables the device posture API for samsung internet 16 beta
+    if(navigator.devicePosture != undefined)
+        navigator.devicePosture.type;
     });
 
     document.getElementById('btnNew').addEventListener('click', newLogo, false);

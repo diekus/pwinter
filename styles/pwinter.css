@@ -200,8 +200,8 @@ input[type="color"] {
     }
 }
 
-@media (device-posture: folded) {
+@media (orientation: portrait) and (device-posture: folded) {
     html {
-        background: red;
+        background: blue;
     }
 }
