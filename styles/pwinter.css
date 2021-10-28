@@ -23,7 +23,7 @@ html {
 
 body {
     display: grid;
-    grid-template: 5rem auto / 1fr 4fr 1fr;
+    grid-template: 1fr auto 1fr / 1fr 4fr 1fr;
     height: 100vh;
     max-width: 1000px;
     padding: 0px;
@@ -35,6 +35,10 @@ body {
 header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #titleBar {
@@ -57,29 +61,27 @@ header {
 #canvasPreview {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border-radius: var(--radius) var(--radius) 0px 0px;
+    border-radius: var(--radius);
+    padding: 5%;
     box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-    width: 100%;
-    height: 100%;
+    display: grid;
+    align-content: start;
     gap: 1rem;
-    transition: background-color .2s ease-in;
+    transition: background-color .2s ease-in, padding .2s, margin .2s;
 }
 
 #colorSelectionPane {
     display: flex;
     flex-direction: column;
-    margin: 3rem;
-    padding: 1rem;
+    margin: 10%;
+    padding: 5%;
     border: var(--border) solid 7px;
     border-radius: var(--radius);
     box-shadow: inset var(--shadow);
 }
 
 .pwaLogo {
-    padding: 15%;
+    padding: 10%;
 }
 
 .icon {
@@ -143,76 +145,56 @@ input[type="color"] {
     cursor: pointer;
 }
 
-@media (max-width: 400px) {
-    body {
-        grid-template: 5rem auto / 1fr 10fr 1fr;
-    }
-
-    .pwaLogo {
-        padding: 2em;
-        width: 80%;
-    }
-
-    #pwaLogo {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
+@media (max-width: 450px) {
     #colorSelectionPane {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem;
-        padding: 1rem;
+        margin: 2%;
+        padding: 1%;
     }
-} 
+
+    #canvasPreview {
+        padding: 1%;
+    }
+
+    body {
+        display: grid;
+        grid-template: 1fr auto 1fr / 1vw 4fr 1vw;
+        height: 100vh;
+        max-width: 1000px;
+        padding: 0px;
+        margin: 0px auto;
+        color: #FFF;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
 
 @media (orientation: landscape) {
-    body {
-        grid-template: 5rem auto / 1fr 20fr 1fr;
-    }
-    
     #canvasPreview {
-        flex-direction: row;
-        justify-content: space-around;
+        grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
         align-items: center;
     }
 
-    .pwaLogo {
-        padding: 3em;
-        width: 100%;
+    body{
+        max-width: none;
     }
 }
 
 @media (orientation: portrait) {
-    body {
-        grid-template: 5rem auto / 1fr 20fr 1fr;
-    }
-    
-    #canvasPreview {
-        flex-direction: column;
-        align-items: stretch;
-    }
 
-    #colorSelectionPane {
-        margin: 1rem;
-    }
 }
 
 @media (orientation: portrait) and (device-posture: folded) {
-    #canvasPreview {
-        display: grid;
-        grid-template: 1fr 1fr / 1fr;
+
+
+}
+
+@media (pointer: coarse) {
+    .icon {
+        height: 2rem;
+        margin-bottom: 1.5rem;
     }
 
-    #pwaLogo {
-        padding-bottom: 4.5rem;
+    #titleBarIcons {
+        gap: 2rem;
     }
-
-    #colorSelectionPane {
-        height: fit-content;
-        margin-top: -2rem;
-    }
-
 }
