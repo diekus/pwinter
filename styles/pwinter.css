@@ -219,18 +219,6 @@ input[type="color"] {
         app-region: drag;
         width: calc(env(titlebar-area-width, 100%) - 2em);
         padding: .5rem;
-    }
-
-    body {
-        display: grid;
-        grid-template: 1fr auto 1fr / 1fr 4fr 1fr;
-        height: 100vh;
-        /* max-width: 1000px; */
-        padding: 0px;
-        margin: 0px auto;
-        color: #FFF;
-        font-family: 'Courier New', Courier, monospace;
-    }
-    
+    } 
 
 }
