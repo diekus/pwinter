@@ -1,3 +1,5 @@
+@import 'reset.css';
+
 :root {
     --shadow-color: rgba(0, 0, 0, .5);
     --shadow: 0px 0px 20px var(--shadow-color);
@@ -19,6 +21,10 @@ html {
     background-attachment: fixed;
     background-repeat: no-repeat;
     height: 100vh;
+}
+
+h1 {
+    font-weight: bolder;
 }
 
 body {
@@ -85,7 +91,7 @@ header {
 }
 
 .icon {
-    height: 1rem;
+    height: 1.1rem;
     cursor: pointer;
     -webkit-app-region: no-drag;
     app-region: no-drag;
@@ -179,10 +185,6 @@ input[type="color"] {
     }
 }
 
-@media (orientation: portrait) {
-
-}
-
 @media (orientation: portrait) and (device-posture: folded) {
 
 
@@ -197,4 +199,33 @@ input[type="color"] {
     #titleBarIcons {
         gap: 2rem;
     }
+}
+
+@media (pointer: fine) {
+    .icon {
+        height: 1.1rem;
+    }
+
+    header {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        -webkit-app-region: drag;
+        app-region: drag;
+        width: calc(env(titlebar-area-width, 100%) - 2em);
+        padding: .5rem;
+    }
+
+    body {
+        display: grid;
+        grid-template: 1fr auto 1fr / 1fr 4fr 1fr;
+        height: 100vh;
+        /* max-width: 1000px; */
+        padding: 0px;
+        margin: 0px auto;
+        color: #FFF;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+
 }
