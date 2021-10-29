@@ -29,7 +29,7 @@ h1 {
 
 body {
     display: grid;
-    grid-template: 1fr auto 1fr / 1fr 4fr 1fr;
+    grid-template: 1fr auto 1fr / .2fr 4fr .2fr;
     height: 100vh;
     max-width: 1000px;
     padding: 0px;
