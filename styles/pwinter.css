@@ -45,6 +45,8 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    -webkit-app-region: drag;
+    app-region: drag;
 }
 
 #titleBar {
@@ -215,8 +217,6 @@ input[type="color"] {
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
-        -webkit-app-region: drag;
-        app-region: drag;
         width: calc(env(titlebar-area-width, 100%) - 2em);
         padding: .5rem;
     } 
