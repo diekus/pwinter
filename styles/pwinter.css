@@ -127,6 +127,12 @@ header {
     position: fixed;
     bottom: 30px;
     right: 30px;
+    cursor: pointer;
+    transition: transform .2s ease-in;
+}
+
+.logoFooter:hover {
+    transform: scale(1.1);
 }
 
 .colorSelectionRow {
