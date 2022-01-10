@@ -30,6 +30,7 @@ h1 {
 body {
     display: grid;
     grid-template: 1fr auto 1fr / .2fr 4fr .2fr;
+    justify-items: center;
     height: 100vh;
     max-width: 1000px;
     padding: 0px;
@@ -70,12 +71,15 @@ header {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     border-radius: var(--radius);
-    padding: 5%;
     box-shadow: var(--shadow);
     display: grid;
     align-content: start;
     gap: 1rem;
     transition: background-color .2s ease-in, padding .2s, margin .2s;
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+
 }
 
 #colorSelectionPane {
@@ -140,21 +144,14 @@ header {
     flex-direction: row;
     justify-content: space-around;
     margin: 1em;
-    gap: .5em;
-}
-
-.colorCircle {
-    border: var(--border) solid 6px;
-    border-radius: 50%;
-    height: 2.3em;
-    width: 2.3em;
+    gap: 1.3em;
 }
 
 input[type="color"] {
     border: var(--border) solid 1.2px;
     border-radius: 12%;
-    height: 3.3em;
-    width: 3.3em;
+    height: 3.3rem;
+    width: 3.3rem;
     background:var(--border);
     cursor: pointer;
 }
