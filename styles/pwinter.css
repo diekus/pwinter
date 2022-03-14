@@ -42,16 +42,6 @@ body {
 header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-self: start;
-    -webkit-app-region: drag;
-    app-region: drag;
-}
-
-#titleBar {
     color: #FFFFFF;
     background-color: #3A006A;
     position: fixed;
@@ -60,10 +50,10 @@ header {
     width: calc(env(titlebar-area-width, 100%) - 2em);
     height: env(titlebar-area-height, 40px);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0px 1em;
+    justify-content: center;
+    justify-self: center;
     -webkit-app-region: drag;
     app-region: drag;
 }
@@ -209,6 +199,11 @@ input[type="color"] {
     h1{
         margin: 1rem;
         font-size: 1.2rem;
+    }
+
+    header {
+        margin: auto;
+        font-size: 2.9rem;
     }
 }
 
