@@ -13,6 +13,9 @@
     --colorDark: #111;
     --border: rgb(128, 128, 128);
 
+    --top-margin: env(titlebar-area-height, 40px);
+    --global-padding: 2rem;
+
 }
 
 html {
@@ -28,27 +31,23 @@ h1 {
 }
 
 body {
-    display: grid;
-    grid-template: 1fr auto 1fr / .2fr 4fr .2fr;
-    justify-items: center;
-    height: 100vh;
-    max-width: 1000px;
     padding: 0px;
     margin: 0px auto;
     color: #FFF;
     font-family: 'Courier New', Courier, monospace;
+    
 }
 
 header {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
     color: #FFFFFF;
     background-color: #3A006A;
+    padding: 1rem;
+    margin-bottom: .5rem;
     position: fixed;
     left: env(titlebar-area-x, 0);
     top: env(titlebar-area-y, 0);
-    width: calc(env(titlebar-area-width, 100%) - 2em);
-    height: env(titlebar-area-height, 40px);
+    width: calc(env(titlebar-area-width, 100%));
+    height: var(--top-margin);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,33 +57,32 @@ header {
     app-region: drag;
 }
 
-#canvasPreview {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+main {
+    margin: calc(var(--top-margin) + 1rem) auto auto auto;
+    background-color: #FFF;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    display: grid;
-    align-content: start;
-    gap: 1rem;
+    display: flex;
+    flex-wrap:wrap ;
+    flex-direction: column;
     transition: background-color .2s ease-in, padding .2s, margin .2s;
-    max-width: 1300px;
-    width: 100%;
-    margin: auto;
-
+    width: fit-content;
 }
 
 #colorSelectionPane {
     display: flex;
     flex-direction: column;
-    margin: 10%;
-    padding: 5%;
     border: var(--border) solid 7px;
     border-radius: var(--radius);
     box-shadow: inset var(--shadow);
+    align-self: center;
+    margin: var(--global-padding);
 }
 
-.pwaLogo {
-    padding: 10%;
+#pwaLogo {
+    align-self: center;
+    margin: 2rem;
+    
 }
 
 .icon {
@@ -115,6 +113,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     gap: 1rem;
+    margin: .5rem .1rem;
 }
 
 .logoFooter {
@@ -147,45 +146,6 @@ input[type="color"] {
     cursor: pointer;
 }
 
-@media (max-width: 450px) {
-    #colorSelectionPane {
-        margin: 2%;
-        padding: 1%;
-    }
-
-    #canvasPreview {
-        padding: 1%;
-    }
-
-    body {
-        display: grid;
-        grid-template: 1fr auto 1fr / 1vw 4fr 1vw;
-        height: 100vh;
-        max-width: 1000px;
-        padding: 0px;
-        margin: 0px auto;
-        color: #FFF;
-        font-family: 'Courier New', Courier, monospace;
-    }
-}
-
-@media (orientation: landscape) {
-    #canvasPreview {
-        grid-template-columns: 1fr 1fr;
-        justify-items: stretch;
-        align-items: center;
-    }
-
-    body{
-        max-width: none;
-    }
-}
-
-@media (orientation: portrait) and (device-posture: folded) {
-
-
-}
-
 @media (pointer: coarse) {
     .icon {
         height: 2rem;
@@ -203,7 +163,16 @@ input[type="color"] {
 
     header {
         margin: auto;
-        font-size: 2.9rem;
+        height: 85px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    main {
+        margin-top: 130px;
+        padding-top: 1.5rem;
     }
 }
 
@@ -219,5 +188,10 @@ input[type="color"] {
         width: calc(env(titlebar-area-width, 100%) - 2em);
         padding: .5rem;
     } 
+}
 
+@media (orientation: landscape) {
+    main {
+        flex-direction: row;
+    }
 }
