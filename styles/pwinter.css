@@ -61,7 +61,7 @@ header {
 }
 
 main {
-    margin: calc(var(--top-margin) + 1rem) auto auto auto;
+    margin: auto;
     background-color: #FFF;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
