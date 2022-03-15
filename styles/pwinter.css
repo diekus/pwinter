@@ -167,6 +167,7 @@ input[type="color"] {
     header {
         margin: auto;
         height: 85px;
+        flex-direction: column;
     }
 
     header h1 {
