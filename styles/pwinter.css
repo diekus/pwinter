@@ -13,7 +13,7 @@
     --colorDark: #111;
     --border: rgb(128, 128, 128);
 
-    --top-margin: env(titlebar-area-height, 40px);
+    --top-margin: env(titlebar-area-height, auto);
     --global-padding: 2rem;
 
 }
@@ -35,7 +35,10 @@ body {
     margin: 0px auto;
     color: #FFF;
     font-family: 'Courier New', Courier, monospace;
-    
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
 }
 
 header {
@@ -49,7 +52,7 @@ header {
     width: calc(env(titlebar-area-width, 100%));
     height: var(--top-margin);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     justify-self: center;
@@ -63,10 +66,10 @@ main {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     display: flex;
-    flex-wrap:wrap ;
-    flex-direction: column;
+    flex-direction: row;
     transition: background-color .2s ease-in, padding .2s, margin .2s;
     width: fit-content;
+    align-self: center;
 }
 
 #colorSelectionPane {
@@ -190,8 +193,8 @@ input[type="color"] {
     } 
 }
 
-@media (orientation: landscape) {
+@media (orientation: portrait) {
     main {
-        flex-direction: row;
+        flex-direction: column;
     }
 }

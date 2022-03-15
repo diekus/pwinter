@@ -41,50 +41,51 @@
           </nav>
     </header>
     <main id="canvasPreview">
+
         <section id="pwaLogo">
-            <svg class="pwaLogo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-                <title>PWA logo preview</title>
-                <g fill-rule="nonzero">
-                  <path id="svgA" d="M228.151 95.812l8.956-22.646h25.858l-12.272-34.354L266.041 0 310 116.716h-32.418l-7.513-20.904h-41.918" fill="var(--colorA)"/>
-                  <path id="svgW" d="M200.496 116.717L247.554.002h-31.198l-32.192 75.423L161.273.002h-23.981l-24.578 75.423L95.38 41.056 79.694 89.383l15.927 27.334h30.702l22.211-67.639 21.176 67.639h30.786" fill="var(--colorW)"/>
-                  <path id="svgP" d="M29.614 76.65H48.83c5.822 0 11.006-.65 15.551-1.95l4.971-15.31L83.24 16.598a34.16 34.16 0 00-3.624-4.758C72.484 3.947 62.05 0 48.313 0H0v116.716h29.614V76.65zm25.437-49.798c2.785 2.803 4.178 6.555 4.178 11.255 0 4.737-1.225 8.492-3.674 11.268-2.687 3.086-7.631 4.627-14.836 4.627H29.614V22.646H40.8c6.715 0 11.465 1.402 14.251 4.206" fill="var(--colorP)"/>
-                </g>
-            </svg>
-        </section>
-        <section id="colorSelectionPane">
-            <span class="colorSelectionRow">
-                <input type="color" id="colorPickerP" name="colorP" value="#808080">
-                <input type="color" id="colorPickerW" name="colorW" value="#808080">
-                <input type="color" id="colorPickerA" name="colorA" value="#808080">
-            </span>
-            <span class="colorSelectionRow">
-                <svg class="bgBtn" id="btnLight" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-miterlimit="1.5">
-                    <title>Set light background on the logo</title>
-                    <circle cx="25" cy="25" r="25" fill="none"/>
-                    <clipPath id="a">
-                    <circle cx="25" cy="25" r="25"/>
-                    </clipPath>
-                    <g clip-path="url(#a)">
-                    <path d="M25 35v5" fill="none" stroke="var(--border)" stroke-width="2.5"/>
-                    <circle cx="25" cy="25" r="6.8" fill="var(--border)"/>
-                    <path d="M25 15v-4M15 25h-4M35 25h5M18 18l-3-3M32 32l3 3M32 18l3-3M18 32l-3 3" fill="none" stroke="var(--border)" stroke-width="2.5"/>
-                    </g>
-                    <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="var(--border)"/>
-                </svg>
-                <svg class="bgBtn" id="btnDark" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-                <title>Set dark background on the logo</title>
-                <circle cx="25" cy="25" r="25" fill="none"/>
-                <clipPath id="a">
-                    <circle cx="25" cy="25" r="25"/>
-                </clipPath>
-                <g fill="var(--border)" clip-path="url(#a)">
-                    <path d="M33 33a11 11 0 01-18-8 11 11 0 0118-8h-1a8 8 0 101 16z"/>
-                    <path d="M34 19l1 1h1l-1 1 1 1h-3v-1l-1-1h2v-1zM28 23l1 1h1v1h-1l1 2h-1l-1-1-1 1v-2h-1v-1h2v-1zM34 27l1 1h1v1h-1l1 1-1 1-1-1-1 1v-2h-1v-1h2v-1z"/>
-                </g>
-                <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="var(--border)"/>
-                </svg>
-            </span>
-        </section>
+          <svg class="pwaLogo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+              <title>PWA logo preview</title>
+              <g fill-rule="nonzero">
+                <path id="svgA" d="M228.151 95.812l8.956-22.646h25.858l-12.272-34.354L266.041 0 310 116.716h-32.418l-7.513-20.904h-41.918" fill="var(--colorA)"/>
+                <path id="svgW" d="M200.496 116.717L247.554.002h-31.198l-32.192 75.423L161.273.002h-23.981l-24.578 75.423L95.38 41.056 79.694 89.383l15.927 27.334h30.702l22.211-67.639 21.176 67.639h30.786" fill="var(--colorW)"/>
+                <path id="svgP" d="M29.614 76.65H48.83c5.822 0 11.006-.65 15.551-1.95l4.971-15.31L83.24 16.598a34.16 34.16 0 00-3.624-4.758C72.484 3.947 62.05 0 48.313 0H0v116.716h29.614V76.65zm25.437-49.798c2.785 2.803 4.178 6.555 4.178 11.255 0 4.737-1.225 8.492-3.674 11.268-2.687 3.086-7.631 4.627-14.836 4.627H29.614V22.646H40.8c6.715 0 11.465 1.402 14.251 4.206" fill="var(--colorP)"/>
+              </g>
+          </svg>
+      </section>
+      <section id="colorSelectionPane">
+          <span class="colorSelectionRow">
+              <input type="color" id="colorPickerP" name="colorP" value="#808080">
+              <input type="color" id="colorPickerW" name="colorW" value="#808080">
+              <input type="color" id="colorPickerA" name="colorA" value="#808080">
+          </span>
+          <span class="colorSelectionRow">
+              <svg class="bgBtn" id="btnLight" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-miterlimit="1.5">
+                  <title>Set light background on the logo</title>
+                  <circle cx="25" cy="25" r="25" fill="none"/>
+                  <clipPath id="a">
+                  <circle cx="25" cy="25" r="25"/>
+                  </clipPath>
+                  <g clip-path="url(#a)">
+                  <path d="M25 35v5" fill="none" stroke="var(--border)" stroke-width="2.5"/>
+                  <circle cx="25" cy="25" r="6.8" fill="var(--border)"/>
+                  <path d="M25 15v-4M15 25h-4M35 25h5M18 18l-3-3M32 32l3 3M32 18l3-3M18 32l-3 3" fill="none" stroke="var(--border)" stroke-width="2.5"/>
+                  </g>
+                  <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="var(--border)"/>
+              </svg>
+              <svg class="bgBtn" id="btnDark" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+              <title>Set dark background on the logo</title>
+              <circle cx="25" cy="25" r="25" fill="none"/>
+              <clipPath id="a">
+                  <circle cx="25" cy="25" r="25"/>
+              </clipPath>
+              <g fill="var(--border)" clip-path="url(#a)">
+                  <path d="M33 33a11 11 0 01-18-8 11 11 0 0118-8h-1a8 8 0 101 16z"/>
+                  <path d="M34 19l1 1h1l-1 1 1 1h-3v-1l-1-1h2v-1zM28 23l1 1h1v1h-1l1 2h-1l-1-1-1 1v-2h-1v-1h2v-1zM34 27l1 1h1v1h-1l1 1-1 1-1-1-1 1v-2h-1v-1h2v-1z"/>
+              </g>
+              <path d="M25 0a25 25 0 110 50 25 25 0 010-50zm0 5a20 20 0 110 40 20 20 0 010-40z" fill="var(--border)"/>
+              </svg>
+          </span>
+      </section>
     </main>
     <footer>
         <svg id="btnShareApp" class="logoFooter" viewBox="0 0 57 53" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="10">
