@@ -73,7 +73,7 @@ async function writeFile (fileHandle, contents) {
 //utils 
 let preparePWALogoforSVG = () => {
     let s = window.getComputedStyle(document.querySelector(':root'));
-    let content = document.getElementById('previewPane').innerHTML;
+    let content = '<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">' + document.getElementById('previewPane').innerHTML;
     content = content.replace('var(--colorP)', s.getPropertyValue('--colorP'));
     content = content.replace('var(--colorW)', s.getPropertyValue('--colorW'));
     content = content.replace('var(--colorA)', s.getPropertyValue('--colorA'));
