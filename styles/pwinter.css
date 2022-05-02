@@ -19,81 +19,93 @@
 }
 
 html {
-    background: rgb(175, 175, 175);
-    background: linear-gradient(170deg, var(--gradient1), var(--gradient2));
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: #313131;
+    background: 
+        radial-gradient(ellipse at bottom, var(--colorW), transparent),            
+        radial-gradient(ellipse at right, var(--colorA), transparent),
+        radial-gradient(ellipse at left, var(--colorP), transparent),
+        black;
+
     height: 100vh;
 }
 
 h1 {
     font-weight: bolder;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 body {
     padding: 0px;
-    margin: 0px auto;
-    color: #FFF;
+    margin: 0px;
+    color: var(--border);
     font-family: 'Courier New', Courier, monospace;
-    display:flex;
-    flex-direction: column;
+    display:grid;
+    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
     height: 100vh;
     justify-content: center;
 }
 
 header {
     color: #FFFFFF;
-    background-color: #3A006A;
-    padding: 1rem;
-    margin-bottom: .5rem;
     position: fixed;
-    left: env(titlebar-area-x, 0);
-    top: env(titlebar-area-y, 0);
-    width: calc(env(titlebar-area-width, 100%));
-    height: var(--top-margin);
+    width: env(titlebar-area-width, 100%);
+    top: env(titlebar-area-y, 0px);
+    left: env(titlebar-area-x, 0px);
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
+    font-size: 1.6rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    justify-self: center;
+    justify-content: space-between;
     -webkit-app-region: drag;
     app-region: drag;
 }
 
-main {
-    margin: auto;
-    background-color: #FFF;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: row;
-    transition: background-color .2s ease-in, padding .2s, margin .2s;
-    width: fit-content;
-    align-self: center;
+h1 {
+    padding-left: 2rem;
+    padding-top: .8rem
+}
+
+nav {
+    margin-right: 1rem;
 }
 
 #colorSelectionPane {
+    grid-column: 4 / 6 ;
+    grid-row: 2 / 6;
+    justify-self: stretch;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    border: var(--border) solid 7px;
-    border-radius: var(--radius);
-    box-shadow: inset var(--shadow);
-    align-self: center;
-    margin: var(--global-padding);
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    transition: background-color .2s ease-in, padding .2s, margin .2s;
 }
 
-#pwaLogo {
-    align-self: center;
-    margin: 2rem;
-    
+#previewPane {
+    grid-column: 2 / 4 ;
+    grid-row: 2 / 6;
+    justify-self: stretch;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: var(--radius) 0 0 var(--radius);
+    transition: background-color .2s ease-in, padding .2s, margin .2s;
+}
+
+#previewPane h2 {
+    text-align: center;
 }
 
 .icon {
-    height: 1.1rem;
+    height: 1.5rem;
     cursor: pointer;
     -webkit-app-region: no-drag;
     app-region: no-drag;
     transition: transform .2s ease-in;
+    text-shadow: 1px 1px 2px black;
 }
 
 .icon:hover {
@@ -115,8 +127,8 @@ main {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
-    margin: .5rem .1rem;
+    gap: 1.2rem;
+    margin: .5rem 1.5rem .5rem .1rem ;
 }
 
 .logoFooter {
@@ -138,6 +150,7 @@ main {
     justify-content: space-around;
     margin: 1em;
     gap: 1.3em;
+    border-bottom: var(--border solid 5px);
 }
 
 input[type="color"] {
@@ -149,53 +162,38 @@ input[type="color"] {
     cursor: pointer;
 }
 
-@media (pointer: coarse) {
-    .icon {
-        height: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    #titleBarIcons {
-        gap: 2rem;
-    }
-    
-    h1{
-        margin: 1rem;
-        font-size: 1.2rem;
-    }
-
+@media (max-width:550px) {
     header {
-        margin: auto;
-        height: 85px;
-        flex-direction: column;
+        font-size: 1.3rem;
     }
-
-    header h1 {
-        font-size: 1.7rem;
-    }
-
-    main {
-        margin-top: 130px;
-        padding-top: 1.5rem;
-    }
-}
-
-@media (pointer: fine) {
-    .icon {
-        height: 1.1rem;
-    }
-
-    header {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        width: calc(env(titlebar-area-width, 100%) - 2em);
-        padding: .5rem;
-    } 
 }
 
 @media (orientation: portrait) {
-    main {
-        flex-direction: column;
+    #previewPane {
+        grid-column: 2 / 6 ;
+        grid-row: 2 / 4;
+        border-radius: var(--radius) var(--radius) 0 0;
     }
+
+    #colorSelectionPane {
+        grid-column: 2 / 6 ;
+        grid-row: 4 / 6;
+        border-radius: 0 0 var(--radius) var(--radius);
+    }
+}
+
+@media (pointer: coarse) {
+    height: 2.3rem;
+}
+
+@media (pointer: fine) {
+
+}
+
+@media (horizontal-viewport-segments: 2), (vertical-viewport-segments: 2) {
+    html {
+        background: greenyellow;
+    }
+
+ 
 }

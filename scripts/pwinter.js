@@ -99,7 +99,10 @@ let setRandomColors = () => {
 };
 
 let getRandomColor = () => {
-    return  '#' + Math.floor(Math.random()*16777215).toString(16);
+    let randCol = '#' + Math.floor(Math.random()*16777215).toString(16);
+    if (randCol.length < 7)
+        randCol += '5';
+    return  randCol;
 };
 
 let extractColors = (urlPassed) => {
@@ -115,10 +118,12 @@ let extractColors = (urlPassed) => {
 let setBackgroundTheme = (theme) => {
     switch(theme) {
         case 'btnDark': 
-            document.getElementById('canvasPreview').style.backgroundColor = 'var(--colorDark)';
+            document.getElementById('previewPane').style.backgroundColor = 'var(--colorDark)';
+            document.getElementById('colorSelectionPane').style.backgroundColor = 'var(--colorDark)';
             break;
         case 'btnLight': 
-            document.getElementById('canvasPreview').style.backgroundColor = 'var(--colorLight)';
+            document.getElementById('previewPane').style.backgroundColor = 'var(--colorLight)';
+            document.getElementById('colorSelectionPane').style.backgroundColor = 'var(--colorLight)';
             break;
     }
 };

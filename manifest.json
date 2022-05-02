@@ -6,7 +6,7 @@
     "display": "standalone",
     "display_override": ["window-controls-overlay"],
     "background_color": "#AFAFAF",
-    "theme_color": "#3A006A",
+    "theme_color": "#3D3D3D",
     "orientation": "any",
     "icons": [{
         "src": "images/pwinter-512.png",
