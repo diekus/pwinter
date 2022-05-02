@@ -168,7 +168,7 @@ input[type="color"] {
     }
 
     body {
-        grid-template: 2rem repeat(4, 1fr) 2rem / repeat(6, 1fr);
+        grid-template: repeat(6, 1fr) / 2rem repeat(4, 1fr) 2rem;
     }
 }
 
