@@ -166,6 +166,10 @@ input[type="color"] {
     header {
         font-size: 1.3rem;
     }
+
+    body {
+        grid-template: 2rem repeat(4, 1fr) 2rem / repeat(6, 1fr);
+    }
 }
 
 @media (orientation: portrait) {
