@@ -73,7 +73,7 @@ async function writeFile (fileHandle, contents) {
 //utils 
 let preparePWALogoforSVG = () => {
     let s = window.getComputedStyle(document.querySelector(':root'));
-    let content = document.getElementById('pwaLogo').innerHTML;
+    let content = document.getElementById('previewPane').innerHTML;
     content = content.replace('var(--colorP)', s.getPropertyValue('--colorP'));
     content = content.replace('var(--colorW)', s.getPropertyValue('--colorW'));
     content = content.replace('var(--colorA)', s.getPropertyValue('--colorA'));
