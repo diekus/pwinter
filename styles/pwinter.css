@@ -236,14 +236,14 @@ input[type="color"] {
 
 /* Device Posture */
 
-@media (device-posture: folded) and (orientation: portrait) {
-    html {
-        background: cornflowerblue;
-    }
-}
-
 @media (device-posture: folded) {
     html {
         background: salmon;
+    }
+}
+
+@media (device-posture: folded) and (orientation: portrait) {
+    html {
+        background: cornflowerblue;
     }
 }
