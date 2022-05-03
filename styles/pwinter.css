@@ -266,13 +266,14 @@ input[type="color"] {
         left: 0px;
         bottom: env(titlebar-area-y, 0px);
         right: env(titlebar-area-x, 0px);
+        grid-column: 2 / 6;
+        grid-row: 6 / 7;
     }
     
     #previewPane {
         grid-column: 2 / 6 ;
         grid-row: 2 / 3;
         border-radius: var(--radius)
-
     }
 
     #colorSelectionPane {
