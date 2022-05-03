@@ -266,18 +266,28 @@ input[type="color"] {
         left: 0px;
         bottom: env(titlebar-area-y, 0px);
         right: env(titlebar-area-x, 0px);
+        grid-column: 2 / 6;
+        grid-row: 6 / 7;
     }
     
     #previewPane {
         grid-column: 2 / 6 ;
         grid-row: 2 / 3;
         border-radius: var(--radius)
-
     }
 
     #colorSelectionPane {
         grid-column: 2 / 6 ;
         grid-row: 5 / 6;
         border-radius: var(--radius)
+    }
+
+    .logoFooter {
+        height: 3rem;
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        cursor: pointer;
+        transition: transform .2s ease-in;
     }
 }
