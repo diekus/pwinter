@@ -39,7 +39,7 @@ body {
     margin: 0px;
     color: var(--border);
     font-family: 'Courier New', Courier, monospace;
-    display:grid;
+    display: grid;
     grid-template: repeat(6, 1fr) / repeat(6, 1fr);
     height: 100vh;
     justify-content: center;
@@ -188,7 +188,7 @@ input[type="color"] {
 }
 
 @media (pointer: coarse) {
-    height: 2.3rem;
+    
 }
 
 @media (pointer: fine) {
@@ -259,6 +259,13 @@ input[type="color"] {
 @media (device-posture: folded) and (orientation: portrait) {
     body {
         grid-template: repeat(2, 5rem 1fr 5rem) / repeat(6, 1fr)  ;
+    }
+
+    header {
+        top: 0px;
+        left: 0px;
+        bottom: env(titlebar-area-y, 0px);
+        right: env(titlebar-area-x, 0px);
     }
     
     #previewPane {
