@@ -262,6 +262,7 @@ input[type="color"] {
     }
 
     header {
+        position: inherit;
         top: 0px;
         left: 0px;
         bottom: env(titlebar-area-y, 0px);
