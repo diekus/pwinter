@@ -267,7 +267,7 @@ input[type="color"] {
         left: 0px;
         bottom: env(titlebar-area-y, 0px);
         right: env(titlebar-area-x, 0px);
-        grid-column: 2 / 6;
+        grid-column: 1 / 7;
         grid-row: 6 / 7;
     }
     
