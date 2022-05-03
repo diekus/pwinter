@@ -194,6 +194,8 @@ input[type="color"] {
 
 }
 
+/* Dual Screen */
+
 @media (horizontal-viewport-segments: 2) {
     body {
         grid-template: repeat(6, 1fr) /  repeat(2, 2rem 1fr 2rem);
@@ -229,5 +231,13 @@ input[type="color"] {
         grid-column: 2 / 6 ;
         grid-row: 5 / 6;
         border-radius: var(--radius)
+    }
+}
+
+/* Device Posture */
+
+@media (device-posture: folded) {
+    html {
+        background: cornflowerblue;
     }
 }
