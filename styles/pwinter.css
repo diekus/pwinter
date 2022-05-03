@@ -194,10 +194,40 @@ input[type="color"] {
 
 }
 
-@media (horizontal-viewport-segments: 2), (vertical-viewport-segments: 2) {
-    html {
-        background: greenyellow;
+@media (horizontal-viewport-segments: 2) {
+    body {
+        grid-template: repeat(6, 1fr) /  repeat(2, 2rem 1fr 2rem);
+    }
+    
+    #previewPane {
+        grid-column: 2 / 3 ;
+        grid-row: 2 / 6;
+        border-radius: var(--radius)
+
     }
 
- 
+    #colorSelectionPane {
+        grid-column: 5 / 6 ;
+        grid-row: 2 / 6;
+        border-radius: var(--radius)
+    }
+}
+
+@media (vertical-viewport-segments: 2) {
+    body {
+        grid-template: repeat(2, 5rem 1fr 5rem) / repeat(6, 1fr)  ;
+    }
+    
+    #previewPane {
+        grid-column: 2 / 6 ;
+        grid-row: 2 / 3;
+        border-radius: var(--radius)
+
+    }
+
+    #colorSelectionPane {
+        grid-column: 2 / 6 ;
+        grid-row: 5 / 6;
+        border-radius: var(--radius)
+    }
 }
