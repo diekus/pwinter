@@ -281,4 +281,13 @@ input[type="color"] {
         grid-row: 5 / 6;
         border-radius: var(--radius)
     }
+
+    .logoFooter {
+        height: 3rem;
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        cursor: pointer;
+        transition: transform .2s ease-in;
+    }
 }
