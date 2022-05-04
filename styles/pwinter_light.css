@@ -3,6 +3,6 @@
     --gradient2: rgb(206, 206, 206) 30%;
 }
 
-#canvasPreview {
+#previewPane {
     background-color: var(--colorLight);
 }
