@@ -3,6 +3,6 @@
     --gradient2: rgb(40, 40, 40) 30% ;
 }
 
-#previewPane {
+#previewPane, #colorSelectionPane {
     background-color: var(--colorDark);
 }
