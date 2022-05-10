@@ -76,7 +76,6 @@ nav {
     grid-column: 4 / 6 ;
     grid-row: 2 / 6;
     justify-self: stretch;
-    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +90,6 @@ nav {
     justify-self: stretch;
     display: flex;
     flex-direction: column;
-    background: white;
     border-radius: var(--radius) 0 0 var(--radius);
     transition: background-color .2s ease-in, padding .2s, margin .2s, grid-column .2s ease-in, grid-row .2s ease-in;
 }

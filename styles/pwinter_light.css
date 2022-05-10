@@ -3,6 +3,6 @@
     --gradient2: rgb(206, 206, 206) 30%;
 }
 
-#previewPane {
+#previewPan, #colorSelectionPane {
     background-color: var(--colorLight);
 }
